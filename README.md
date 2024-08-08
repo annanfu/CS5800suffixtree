@@ -38,8 +38,8 @@ Suffix tree construction can be memory-intensive, which might limit its applicab
 The program is designed for educational and benchmarking purposes and might require optimizations for production-level tasks.
 
 **Citations**
-https://www.ncbi.nlm.nih.gov/nuccore/CM000683.2/
-https://github.com/lemire/CMemoryUsage
-https://www.geeksforgeeks.org/suffix-tree-application-1-substring-check/
-https://www.geeksforgeeks.org/suffix-tree-application-2-searching-all-patterns/
+- https://www.ncbi.nlm.nih.gov/nuccore/CM000683.2/
+- https://github.com/lemire/CMemoryUsage
+- https://www.geeksforgeeks.org/suffix-tree-application-1-substring-check/
+- https://www.geeksforgeeks.org/suffix-tree-application-2-searching-all-patterns/
 
