@@ -11,8 +11,12 @@ To compile and run the project, you will find three different C files, each tail
 The optional_input_file are datasets sourced from human genomic sequence of chromosome 21 with different sizes. For example:
 "testfile100" is the dataset of size 100
 
-To run the c file, use the following command in your terminal:
+To run the C file, navigate to the directory `./Substring Pattern Search - Annan Fu` in your terminal and use the following command.
+
 ```
+// navigate to the directory if needed
+cd ./Substring\ Pattern\ Search\ -\ Annan\ Fu/
+// compile and run the c code
 gcc -o pattern_search_comparison_annanfu pattern_search_comparison_annanfu.c
 ./pattern_search_comparison_annanfu [optional_testfile_size]
 ```
@@ -39,13 +43,19 @@ The program is designed for educational and benchmarking purposes and might requ
 
 **How To Run**
 
-first install the suffix-trees package
+Navigate to the directory if needed
+```
+cd ./Longest\ Common\ Substring\ -\ Yuxin\ Wang/
+```
+
+install the suffix-trees package
 ```
 pip install suffix-trees
 // or
 pip3 install suffix-trees
 ```
-then run the code in the LCS_Nora directory
+
+then run the code in the directory
 ```
 python3 lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
 //or
