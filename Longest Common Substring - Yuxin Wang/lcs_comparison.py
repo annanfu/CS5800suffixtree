@@ -1,6 +1,6 @@
 import time
 import tracemalloc
-from suffix_trees import STree
+from suffix_trees import STree  # pip install suffix-trees
 import numpy as np
 
 
