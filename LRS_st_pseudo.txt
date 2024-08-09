@@ -1,0 +1,61 @@
+# Final Project: Suffix Tree_Longest Repeated Substring
+# Comparing Solution: Suffix Tree (pseudo code)
+
+function BuildSuffixTree(text):
+    Initialize root node
+    Initialize active_point as root
+    Initialize remainder as 0
+    Initialize last_created_internal_node as NULL
+
+    for i from 0 to length of text - 1:
+        remainder += 1
+        last_created_internal_node = NULL
+        
+        while remainder > 0:
+            if active_length is 0:
+                Set active_edge to text[i]
+            
+            if there is no edge starting with active_edge from active_node:
+                Create new leaf edge from active_node with start index i and end index as length of text
+                if last_created_internal_node is not NULL:
+                    Set suffix_link of last_created_internal_node to active_node
+                    last_created_internal_node = NULL
+            else:
+                edge = get edge starting with active_edge from active_node
+                if active_length >= edge.length:
+                    Move active_point to next node by updating active_node, active_edge, and active_length
+                    continue
+                
+                if text[edge.start + active_length] == text[i]:
+                    active_length += 1
+                    if last_created_internal_node is not NULL:
+                        Set suffix_link of last_created_internal_node to active_node
+                    break
+                
+                Split the edge by creating a new internal node at the split point
+                Create a new leaf edge from the new internal node with start index i and end index as length of text
+                Set suffix_link of last_created_internal_node to the new internal node
+                last_created_internal_node = new internal node
+            
+            remainder -= 1
+            if active_node is root and active_length > 0:
+                active_length -= 1
+                active_edge = text[i - remainder + 1]
+            else if active_node is not root:
+                active_node = suffix_link of active_node
+
+function FindLongestRepeatedSubstring(root):
+    Initialize max_length as 0
+    Initialize max_start as 0
+
+    function DFS(node, depth):
+        if node has more than one child:
+            if depth > max_length:
+                max_length = depth
+                max_start = start_index of node
+
+        for each child in node.children:
+            DFS(child, depth + child.edge_length)
+
+    DFS(root, 0)
+    return substring from max_start to max_start + max_length
