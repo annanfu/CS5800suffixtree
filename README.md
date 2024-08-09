@@ -1,5 +1,6 @@
 # CS5800suffixtree
 
+## Substring pattern searching - Annan Fu 
 **About/Overview**
 
 This project demonstrates the analysis of implementation comparison between suffix tree algorithm and other algorithms(dynamic programming/brute force)in C. The main purpose is to compare the performance in time and space of the suffix tree approach against traditional methods in 3 applications: longest repeated substring, longest common substring and substring pattern searching across various dataset sizes and pattern lengths.
@@ -10,23 +11,10 @@ To compile and run the project, you will find three different C files, each tail
 The optional_input_file are datasets sourced from human genomic sequence of chromosome 21 with different sizes. For example:
 "testfile100" is the dataset of size 100
 
-1. Substring pattern searching: To run the c file, use the following command in your terminal:
+To run the c file, use the following command in your terminal:
 ```
 gcc -o pattern_search_comparison_annanfu pattern_search_comparison_annanfu.c
 ./pattern_search_comparison_annanfu [optional_testfile_size]
-```
-[Longest common substring]
-first install the suffix-trees package
-```
-pip install suffix-trees
-// or
-pip3 install suffix-trees
-```
-then run the code in the LCS_Nora directory
-```
-python3 lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
-//or
-python lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
 ```
 
 **How to Use the Program**
@@ -47,9 +35,30 @@ The current implementation may not efficiently handle extremely larger dataset s
 Suffix tree construction can be memory-intensive, which might limit its applicability for constrained environments.
 The program is designed for educational and benchmarking purposes and might require optimizations for production-level tasks.
 
-**Citations**
+## Longest common substring - Yuxin Wang
+
+**How To Run**
+
+first install the suffix-trees package
+```
+pip install suffix-trees
+// or
+pip3 install suffix-trees
+```
+then run the code in the LCS_Nora directory
+```
+python3 lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
+//or
+python lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
+```
+**Limitations**
+
+This analysis has some limitations. The Python library used for the Suffix Tree method is not able to handle very large datasets, which prevents us from comparing the performance when both string lengths (M and N) reach 10,000. Because of this, the conclusions are based on smaller datasets and may not fully reflect how these methods perform with larger inputs. Additionally, using Python’s tracemalloc to determine space usage provides only a rough estimate of memory consumption. While tracemalloc can track memory allocations, it doesn’t perfectly capture the actual space complexity, especially for complex data structures like suffix trees.
+
+## Citations
 - https://www.ncbi.nlm.nih.gov/nuccore/CM000683.2/
 - https://github.com/lemire/CMemoryUsage
 - https://www.geeksforgeeks.org/suffix-tree-application-1-substring-check/
 - https://www.geeksforgeeks.org/suffix-tree-application-2-searching-all-patterns/
-
+- https://www.geeksforgeeks.org/suffix-tree-application-5-longest-common-substring-2/
+- https://github.com/ptrus/suffix-trees
