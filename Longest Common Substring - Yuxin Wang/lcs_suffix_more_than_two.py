@@ -1,7 +1,7 @@
 import time
 import tracemalloc
-from suffix_trees import STree
-import numpy as np
+from suffix_trees import STree  # pip install suffix-trees
+
 
 # Function to find LCS using Generalized Suffix Tree
 def lcs_suffix_tree(strings):
@@ -20,6 +20,7 @@ def lcs_suffix_tree(strings):
 
     return lcs, peak
 
+
 # Function to compare LCS methods and measure time and space
 def compare_lcs_methods(strings):
     # Measure time and space for suffix tree approach
@@ -27,18 +28,16 @@ def compare_lcs_methods(strings):
     lcs_tree, suffix_tree_memory = lcs_suffix_tree(strings)
     suffix_tree_time = time.time() - start_time
 
-    # Dynamic Programming for more than two strings would require a more complex solution,
-    # but let's focus on comparing the suffix tree method.
-
     # Print the results for suffix tree approach
     print(f"Longest Common Substring (Suffix Tree): {lcs_tree}")
     print(f"Time taken (Suffix Tree): {suffix_tree_time:.6f} seconds")
     print(f"Memory used (Suffix Tree): {suffix_tree_memory / 1024:.2f} KB")
 
+
 # Main function to read files and find LCS
 def main(files):
     strings = []
-    
+
     # Read the contents of all the files
     for file in files:
         with open(file, 'r') as f:
@@ -47,11 +46,11 @@ def main(files):
     # Compare LCS methods
     compare_lcs_methods(strings)
 
-# Example usage
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 3:
-        print("Usage: python lcs_comparison.py <file1> <file2> [<file3> ... <fileN>]")
+        print("Usage: python lcs_comparison.py <file1> <file2> [... <fileN>]")
         sys.exit(1)
 
     files = sys.argv[1:]

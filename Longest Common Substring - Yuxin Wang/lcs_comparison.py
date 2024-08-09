@@ -1,7 +1,8 @@
 import time
 import tracemalloc
-from suffix_trees import STree
+from suffix_trees import STree  # pip install suffix-trees
 import numpy as np
+
 
 # Function to find LCS using Generalized Suffix Tree
 def lcs_suffix_tree(strings):
@@ -19,6 +20,7 @@ def lcs_suffix_tree(strings):
     tracemalloc.stop()
 
     return lcs, peak
+
 
 # Function to find LCS using Dynamic Programming
 def lcs_dynamic_programming(s1, s2):
@@ -46,6 +48,7 @@ def lcs_dynamic_programming(s1, s2):
 
     return lcs, peak
 
+
 # Function to compare LCS methods and measure time and space
 def compare_lcs_methods(s1, s2):
     strings = [s1, s2]
@@ -68,6 +71,7 @@ def compare_lcs_methods(s1, s2):
     print(f"Time taken (Dynamic Programming): {dp_time:.6f} seconds")
     print(f"Memory used (Dynamic Programming): {dp_memory / 1024:.2f} KB")
 
+
 # Main function to read files and find LCS
 def main(file1, file2):
     # Read the contents of the files
@@ -80,7 +84,7 @@ def main(file1, file2):
     # Compare LCS methods
     compare_lcs_methods(s1, s2)
 
-# Example usage
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 3:
