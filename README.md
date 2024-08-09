@@ -15,9 +15,19 @@ The optional_input_file are datasets sourced from human genomic sequence of chro
 gcc -o pattern_search_comparison_annanfu pattern_search_comparison_annanfu.c
 ./pattern_search_comparison_annanfu [optional_testfile_size]
 ```
-[Longest repeated substring]
-
 [Longest common substring]
+first install the suffix-trees package
+```
+pip install suffix-trees
+// or
+pip3 install suffix-trees
+```
+then run the code in the LCS_Nora directory
+```
+python3 lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
+//or
+python lcs_comparison.py [LCSfile1_?.txt] [LCSfile2_?.txt]
+```
 
 **How to Use the Program**
 
