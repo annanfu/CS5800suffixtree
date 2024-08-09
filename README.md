@@ -16,6 +16,7 @@ To run the C file, navigate to the directory `./Substring Pattern Search - Annan
 ```
 // navigate to the directory if needed
 cd ./Substring\ Pattern\ Search\ -\ Annan\ Fu/
+
 // compile and run the c code
 gcc -o pattern_search_comparison_annanfu pattern_search_comparison_annanfu.c
 ./pattern_search_comparison_annanfu [optional_testfile_size]
